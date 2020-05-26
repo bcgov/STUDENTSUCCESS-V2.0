@@ -1,0 +1,40 @@
+{
+  "completion-rates": [
+    {
+      "sd": "005",
+      "courseName": "Composition 10",
+      "courseCode": "CMPS",
+      "courseGradeLevel": "10",
+      "credits": 2,
+      "language": null,
+      "courseStartDate": "01-Jul.-2018",
+      "courseEndDate": null,
+      "programCode": "2018",
+      "requirementCode": "101"
+    },
+    {
+      "sd": "061",
+      "courseName": "Creative Writing 10",
+      "courseCode": "CTWR",
+      "courseGradeLevel": "10",
+      "credits": 2,
+      "language": null,
+      "courseStartDate": "01-Jul.-2018",
+      "courseEndDate": null,
+      "programCode": "2018",
+      "requirementCode": "101"
+    },
+    {
+      "sd": "063",
+      "courseName": "English 10 First Peoples",
+      "courseCode": "EFP",
+      "courseGradeLevel": "10",
+      "credits": 4,
+      "language": null,
+      "courseStartDate": "01-Jul.-2010",
+      "courseEndDate": "31-Aug.-2019",
+      "programCode": "2018",
+      "requirementCode": "101"
+    }
+  ]
+}
