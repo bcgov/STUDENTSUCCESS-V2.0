@@ -6,7 +6,6 @@
     <div class="hor">
       <div id="viz"></div>      
     </div>
-
   </div>
 </template>
 
@@ -20,7 +19,8 @@ export default {
     return{
       def: null,
       list: list,
-      current:null,
+      info:null,
+      realinfo:null,
       index:0,
     }
   },
@@ -29,8 +29,16 @@ export default {
       if(v) this.draw()
     }
   },
+  //Grabs the data when the component is mounted
+  mounted () {
+    axios
+      .get('http://localhost:9999/api/v1/completion-rates?sd=005')
+      .then(response => (this.info = response))  
+  },
   methods:{
     async load(){
+     //Cleans up the data from the api call    
+     this.info = this.info.data[0].data;    
      this.def = {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "width": 756,
@@ -90,17 +98,10 @@ export default {
         "color": "#666666"
     },
     "data": [
-        {
-            "name": "provlvl",
-            "values": [{"district":"Chilliwack","district_number":"033","year":"2017/2018","subpop":"All Students","records":"1077","records2":"1077","value":".82","value2":".82","tooltip":"82%","tooltipR":"       1,077","max":".82","min":".79","percentile_25":".75","percentile_75":".87","min_max_tooltip":"79% - 82%","province_percentile_tooltip":"75% - 87%"},{"district":"Chilliwack","district_number":"033","year":"2017/2018","subpop":"BC Residents","records":"1016","records2":"1016","value":".85","value2":".85","tooltip":"85%","tooltipR":"       1,016","max":".85","min":".8","percentile_25":".8","percentile_75":".91","min_max_tooltip":"80% - 85%","province_percentile_tooltip":"80% - 91%"},{"district":"Chilliwack","district_number":"033","year":"2017/2018","subpop":"Indigenous","records":"178","records2":"178","value":".79","value2":".79","tooltip":"79%","tooltipR":"         178","max":".79","min":".62","percentile_25":".62","percentile_75":".8","min_max_tooltip":"62% - 79%","province_percentile_tooltip":"62% - 80%"},{"district":"Chilliwack","district_number":"033","year":"2017/2018","subpop":"Special Needs","records":"178","records2":"178","value":".75","value2":".75","tooltip":"75%","tooltipR":"         178","max":".75","min":".57","percentile_25":".56","percentile_75":".76","min_max_tooltip":"57% - 75%","province_percentile_tooltip":"56% - 76%"}],
-            "transform": [
-                {
-                    "type": "formula",
-                    "as": "records",
-                    "expr": "format(datum.records,',.0f')"
-                }
-            ]
-        },
+        //Tobe replaced via API
+        this.info
+        //Tobe replaced via API
+        ,
         {
             "name": "distminmax",
             "source": "provlvl"
