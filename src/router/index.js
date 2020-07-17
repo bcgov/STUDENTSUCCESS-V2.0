@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 import SchoolDistrictDirectory from '../views/SchoolDistrictDirectory.vue'
 import SchoolDistrict from '../views/SchoolDistrict.vue'
 import Glossary from '../views/Glossary.vue'
-import School from '../views/School.vue'
+//import School from '../views/School.vue'
 
 Vue.use(VueRouter)
 
