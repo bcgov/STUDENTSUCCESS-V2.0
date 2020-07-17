@@ -14,14 +14,15 @@ Vue.use(VueRouter)
       default: Home,
     }},
     { path:'/glossary', name:'glossary', component: Glossary},
-    { path:'/school-district', name:'SchoolDistrictDirectory', components: {
+     { path:'/school-district', name:'SchoolDistrictDirectory', components: {
       default: SchoolDistrictDirectory,
     }},
     { path: '/school-district/:did', name: 'schoolDistrictByNumber', component: SchoolDistrict,
       children: [
-      { path: 'schools', component: SchoolDistrictSchoolsDirectory },
-      { path: 'schools/:sid', component: School },
-    ]},
+      { name:'one', path: '', component: SchoolDistrict },
+      { name:'two', path: 'schools', component: SchoolDistrictSchoolsDirectory },
+      { name:'three', path: 'schools/:sid', component: School },
+    ]}, 
 ]
 
 const router = new VueRouter({
