@@ -16,11 +16,9 @@ Vue.use(VueRouter)
     { path:'/school-district', name:'SchoolDistrictDirectory', components: {
       default: SchoolDistrictDirectory,
     }},
-    { path: '/school-district/:did', component: SchoolDistrict,
+    { path: '/school-district/:did', name: 'schoolDisctrictbyNumber', component: SchoolDistrict,
       children: [
       { path: 'schools', component: SchoolDistrict },
-      { path: 'schools/:sid', component: School },
-     // { path: 'contextual-information', component: ContextualInformation },
     ]},
 ]
 
