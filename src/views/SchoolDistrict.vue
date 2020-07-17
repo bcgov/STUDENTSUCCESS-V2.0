@@ -1,8 +1,13 @@
 <template>
-<div><h1>This is the School District</h1></div>
+
+<div class="schooldistrict">
+  <header></header>
+  <chartSelector></chartSelector>
+  <chart></chart>
+  <footer></footer>
+</div>
 </template>
 <script>
-import
 export default {
   
 }
