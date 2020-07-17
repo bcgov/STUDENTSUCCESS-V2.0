@@ -1,11 +1,10 @@
 <template>
 
-<div class="schooldistrict">
+<div class="school">
   <header></header>
   <chartSelector></chartSelector>
   <chart></chart>
   <footer></footer>
-  School District
 </div>
 </template>
 <script>

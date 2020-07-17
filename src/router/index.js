@@ -12,16 +12,16 @@ Vue.use(VueRouter)
     { path:'/', name:'home', components: {
       default: Home,
     }},
-    { path:'/glossary', name:'glossary', components: {
+    { path:'/glossary', name:'Glossary', components: {
       default: Glossary,
     }},
     { path:'/school-district', name:'SchoolDistrictDirectory', components: {
       default: SchoolDistrictDirectory,
     }},
-    { path: '/school-district/:did', component: SchoolDistrict,
+    { path: '/school-district/:did', name: 'schoolDisctrictbyNumber', component: SchoolDistrict,
       children: [
       { path: 'schools', component: SchoolDistrict },
-      { path: 'contextual-information', component: ContextualInformation },
+      
     ]},
     { path:'/school-district/:did/:sid', name:'School', components: {
       default: School,
