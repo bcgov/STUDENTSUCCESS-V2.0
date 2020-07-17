@@ -21,11 +21,9 @@ Vue.use(VueRouter)
     { path: '/school-district/:did', component: SchoolDistrict,
       children: [
       { path: 'schools', component: SchoolDistrict },
-      { path: 'contextual-information', component: ContextualInformation },
+      { path: 'schools/:sid', component: School },
+     // { path: 'contextual-information', component: ContextualInformation },
     ]},
-    { path:'/school-district/:did/:sid', name:'School', components: {
-      default: School,
-    }},
 ]
 
 const router = new VueRouter({
