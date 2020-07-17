@@ -5,6 +5,7 @@ import SchoolDistrictDirectory from '../views/SchoolDistrictDirectory.vue'
 import SchoolDistrict from '../views/SchoolDistrict.vue'
 import Glossary from '../views/Glossary.vue'
 import School from '../views/School.vue'
+import SchoolDistrictSchoolsDirectory from '../views/SchoolDistrictSchoolsDirectory.vue'
 
 Vue.use(VueRouter)
 
