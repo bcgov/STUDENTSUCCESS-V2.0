@@ -12,9 +12,7 @@ Vue.use(VueRouter)
     { path:'/', name:'home', components: {
       default: Home,
     }},
-    { path:'/glossary', name:'glossary', components: {
-      default: Glossary,
-    }},
+    { path:'/glossary', name:'glossary', component: Glossary},
     { path:'/school-district', name:'SchoolDistrictDirectory', components: {
       default: SchoolDistrictDirectory,
     }},
