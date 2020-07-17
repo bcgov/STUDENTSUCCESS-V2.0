@@ -21,11 +21,7 @@ Vue.use(VueRouter)
     { path: '/school-district/:did', name: 'schoolDisctrictbyNumber', component: SchoolDistrict,
       children: [
       { path: 'schools', component: SchoolDistrict },
-      
     ]},
-    { path:'/school-district/:did/:sid', name:'School', components: {
-      default: School,
-    }},
 ]
 
 const router = new VueRouter({
