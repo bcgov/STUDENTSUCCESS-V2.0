@@ -1,6 +1,5 @@
 <template>
 
-  
 <div class="schooldistrict">
   <header></header>
   <chartSelector></chartSelector>
@@ -9,7 +8,6 @@
 </div>
 </template>
 <script>
-import
 export default {
   
 }
