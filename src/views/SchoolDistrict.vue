@@ -1,5 +1,16 @@
 <template>
-  <div class="schooldistrict">
-    <h1>School district</h1>
-  </div>
+
+  
+<div class="schooldistrict">
+  <header></header>
+  <chartSelector></chartSelector>
+  <chart></chart>
+  <footer></footer>
+</div>
 </template>
+<script>
+import
+export default {
+  
+}
+</script>
