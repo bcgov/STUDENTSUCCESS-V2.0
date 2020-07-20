@@ -1,9 +1,10 @@
 <template>
 
 <div class="schooldistrict">
+  <b-alert show><div class="message"><strong><div v-html="did"></div></strong></div></b-alert>
   School District {{ did }}
-  <router-link :to="{ name: 'two'}">School</router-link>
-  <div class="message"><strong><div v-html="did"></div></strong></div>
+  
+  
   CHART
   FOOTER
 
