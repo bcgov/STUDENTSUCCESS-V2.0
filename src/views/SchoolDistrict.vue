@@ -2,6 +2,7 @@
 
 <div class="schooldistrict">
   School District {{ did }}
+  <router-link :to="{ name: 'two'}">School</router-link>
   <div class="message"><strong><div v-html="did"></div></strong></div>
   CHART
   FOOTER
