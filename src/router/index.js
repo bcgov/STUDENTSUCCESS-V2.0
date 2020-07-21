@@ -14,10 +14,9 @@ Vue.use(VueRouter)
       default: Home,
     }},
     { path:'/glossary', name:'glossary', component: Glossary},
-     { path:'/school-district', name:'SchoolDistrictDirectory', components: {
-      default: SchoolDistrictDirectory,
-    }},
-    { path: '/school-district/:did/', name: 'schoolDistrictByNumber', component: SchoolDistrict,
+    { path:'/school-district', name:'schooldistrictdirectory', components: SchoolDistrictDirectory},
+    { path: '/school-district/:did', name: 'schoolDistrictByNumber', component: SchoolDistrict,
+
       children: [
       { name:'one', path: '', component: SchoolDistrict },
       { name:'two', path: 'schools', component: SchoolDistrictSchoolsDirectory },
