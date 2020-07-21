@@ -10,9 +10,9 @@
       <b-list-group-item><router-link :to="{ name: 'schoolDistrictByNumber', params: { did: 66 }}">School District 66</router-link></b-list-group-item>
       <b-list-group-item><router-link :to="{ name: 'schoolDistrictByNumber', params: { did: 67 }}">School District 67</router-link></b-list-group-item>
       <b-list-group-item><router-link :to="{ name: 'schoolDistrictByNumber', params: { did: 68 }}">School District 68</router-link></b-list-group-item>
+       <b-list-group-item><router-link :to="{ name: 'two', params: { did: 68 }}">School District 68 Schools</router-link></b-list-group-item>
     </b-list-group>
-
-
+    <router-view></router-view>
                     
   </div>
 </template>
