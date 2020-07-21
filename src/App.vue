@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Header/>
-    <router-view/>
+    ROUTER VIEW START
+    <router-view></router-view>
+    ROUTER VIEW END
   </div>
 </template>
 
