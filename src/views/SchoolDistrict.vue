@@ -4,6 +4,7 @@
   <b-alert show><div class="message"><strong><div v-html="did"></div></strong></div></b-alert>
   School District {{ did }}
   <hr>
+  <router-view></router-view>    
 </div>
 </template>
 <script>

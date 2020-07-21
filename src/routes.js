@@ -4,16 +4,17 @@ import SchoolDistrictDirectory from './views/SchoolDistrictDirectory.vue'
 import SchoolDistrict from './views/SchoolDistrict.vue'
 
 //import School from './views/School.vue'
-//import SchoolDistrictSchoolsDirectory from './views/SchoolDistrictSchoolsDirectory.vue'
+import SchoolDistrictSchoolsDirectory from './views/SchoolDistrictSchoolsDirectory.vue'
 
 export const routes = [
     { path:'/', name:'home', components: {
       default: Home,
     }},
     { path:'/glossary', name:'glossary', component: Glossary},
-    { path:'/school-district', component: SchoolDistrictDirectory, children:[
+    { path:'/school-districts', component: SchoolDistrictDirectory,},
+    { path:'/school-district/:did', name: 'schoolDistrictByNumber',component: SchoolDistrict, children:[
         //{ path: '', component: SchoolDistrictDirectory },
-        { path: ':did', name:'schoolDistrictByNumber', component: SchoolDistrict }
+        { path: 'schools', component: SchoolDistrictSchoolsDirectory  }
     ]}
   //  { path: '/school-district/:did', name: 'schoolDistrictByNumber', component: SchoolDistrict
   //    children: [

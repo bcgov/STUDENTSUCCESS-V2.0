@@ -11,7 +11,7 @@
       <b-list-group-item><router-link :to="{ name: 'schoolDistrictByNumber', params: { did: 68 }}">School District 68</router-link></b-list-group-item>
     </b-list-group>   
     <hr>
-    <router-view></router-view>               
+               
   </div>
 </template>
 <script>

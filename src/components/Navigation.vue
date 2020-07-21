@@ -9,7 +9,7 @@
       <b-navbar-nav >
         <b-nav-item href="#"><router-link to="/">Home</router-link></b-nav-item>
         <b-nav-item href="#"> <router-link to="/glossary">Glossary</router-link></b-nav-item>
-        <b-nav-item href="#"><router-link to="/school-district">School District Directory</router-link></b-nav-item>
+        <b-nav-item href="#"><router-link to="/school-districts">School District Directory</router-link></b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
