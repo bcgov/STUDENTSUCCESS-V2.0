@@ -19,5 +19,4 @@
 export default {
   name: 'SchoolDistrictDirectory',
 }
-fdcdb915ff5863baf4
 </script>
