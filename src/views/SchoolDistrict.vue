@@ -39,6 +39,7 @@
 
   <hr>
   <div class="charts">
+    <h2>Available Reports</h2>
     <ul>
       <li>
         Contextual Information

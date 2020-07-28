@@ -25,5 +25,8 @@ export default {
   
   getGlossary(){
     return apiClient.get('/glossary');
+  },
+  getAllCities(){
+    return apiClient.get('/all/cities-api');
   }
 }
