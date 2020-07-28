@@ -1,9 +1,26 @@
 <template>
 <div class="cities">
   <h1>City Directory</h1>
-      <b-list-group v-for="item in citiesList" :key="item.phys_city">
-        <b-list-group-item> {{ item.phys_city }} </b-list-group-item>
-    </b-list-group>
+  <b-form-input v-model="selectedCity" list="my-list-id"></b-form-input>
+  <button v-on:click="searchForSchools">Search</button>
+
+  <datalist id="my-list-id">
+    <option>Manual Option</option>
+    <option v-for="city in citiesList" :key="city.phy_city"> {{ city.phy_city }}</option>
+  </datalist>
+<div v-if="selectedCitySchoolsList.length">
+  <h2>Schools in {{selectedCity}}</h2>
+  <div class="list-of-schools">
+
+    <b-list-group v-for="item in selectedCitySchoolsList" :key="item">
+        <b-list-group-item>{{item}}</b-list-group-item>
+    </b-list-group>    
+  </div>
+</div>
+   
+
+   <router-view></router-view>
+
 </div>
 </template>
 <script>
@@ -12,19 +29,31 @@ export default {
   name: 'CitiesDirectory',
   data() {
     return {
+      selectedCity: "",
       citiesList: [],
+      selectedCitySchoolsList: [],
     }
   },
   created() {
+    this.selectedCity = "Select a city";
     StudentSuccessDataService.getAllCities()
       .then((response) => {
-        //this.citiesList = response.data
+        this.citiesList = response.data
         console.log(this.citiesList);
       })
       // eslint-disable-next-line no-unused-vars
       .catch((error) => {
         //console.log('There was an error:', error.response)
       })
+  },
+   methods: {
+    searchForSchools: function (event) {
+      console.log(event);
+      console.log("search for schools by city" + this.selectedCity);
+        this.selectedCitySchoolsList = [this.selectedCity + " school 1", this.selectedCity + " school 2", this.selectedCity + " school3"];
+       StudentSuccessDataService.getSchoolsbyCity(this.selectedCity);
+      
+    }
   }
 }
 </script>

@@ -15,7 +15,8 @@ export default {
   name: 'SchoolDistrictDirectory',
   data() {
     return {
-        schoolDistrictsList: []
+        schoolDistrictsList: [],
+
     }
   },
   created() {

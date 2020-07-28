@@ -1,6 +1,7 @@
 <template>
   <div class="glossary">
     <h1>Glossary</h1>
+    hello world
   </div>
 </template>
 <script>

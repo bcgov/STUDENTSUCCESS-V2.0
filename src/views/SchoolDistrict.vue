@@ -4,9 +4,7 @@
   <b-alert show><div class="message"><strong><div v-html="did"></div></strong></div></b-alert>
   <h1>School District {{ did }} ({{ districtInformation.district_name}})</h1>
 
-
 <img v-bind:src="'https://studentsuccess.gov.bc.ca/img/maps/map_sd_' + districtInformation.sd +'.png'"  alt="Small map graphic with School District 010 highlighted.">
-
 <strong>District Office:</strong>   {{ districtInformation.courier_address }}<br>
 <strong>Phone:</strong> {{ districtInformation.district_phone }}<br>
 <strong>Website:</strong> {{  districtInformation.website }}<br>
@@ -72,6 +70,15 @@
       </li>            
     </ul>
   </div>
+
+  
+  <button v-on:click="displaySchoolsInDistrict">See the schools in the District</button>
+  <div v-if="schoolDistrictSchoolsList.length">
+    <h2> School District {{ this.did }} Schools</h2>
+        <b-list-group v-for="item in schoolDistrictSchoolsList" :key="item">
+        <b-list-group-item>{{item}}</b-list-group-item>
+    </b-list-group>  
+  </div>
   <router-view></router-view>    
   
 </div>
@@ -83,7 +90,8 @@ export default {
   data() {
     return {
         did: this.$route.params.did,
-        districtInformation: []
+        districtInformation: [],
+        schoolDistrictSchoolsList: []
     }
   },
   watch: {
@@ -102,6 +110,14 @@ export default {
       .catch((error) => {
         //console.log('There was an error:', error.response)
       })
+  },
+   methods: {
+    displaySchoolsInDistrict: function (event) {
+      console.log(event);
+       StudentSuccessDataService.getSchoolsbyDistrict(this.did);
+       this.schoolDistrictSchoolsList = ["School District " +  this.did + " school 1", "School District " + this.did + " school 2", "School District " + this.did + " school 3", "School District " + this.did + " school 4"];
+      
+    }
   }
 }
 </script>
