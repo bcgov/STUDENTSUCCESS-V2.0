@@ -3,7 +3,7 @@ import Glossary from './views/Glossary.vue'
 import CitiesDirectory from './views/CitiesDirectory.vue'
 import SchoolDistrictDirectory from './views/SchoolDistrictDirectory.vue'
 import SchoolDistrict from './views/SchoolDistrict.vue'
-
+import SchoolList from './views/SchoolsList.vue'
 import School from './views/School.vue'
 import SchoolDistrictSchoolsDirectory from './views/SchoolDistrictSchoolsDirectory.vue'
 
@@ -13,7 +13,9 @@ export const routes = [
     }},
     { path:'/glossary', name:'glossary', component: Glossary},
     { path:'/cities', component: CitiesDirectory,},
+    { path:'/school/:sid', name: 'school', component: School,},
     { path:'/school-districts', component: SchoolDistrictDirectory,},
+    { path:'/schools/:type/:keyword', name:'schoolList', component: SchoolList},
     { path:'/school-district/:did', name: 'schoolDistrictByNumber',component: SchoolDistrict, children:[
         { path: '', component: SchoolDistrictDirectory },
         { path: 'schools', component: SchoolDistrictSchoolsDirectory },

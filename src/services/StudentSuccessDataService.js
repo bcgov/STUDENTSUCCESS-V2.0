@@ -14,6 +14,7 @@ export default {
   getChart(school_district, report) {
     return apiClient.get('/school-district-api/' + school_district + "/" + report);
   },
+  
   getSchoolDistrictInformation(school_district) {
     
     return apiClient.get('/school-district-api' + "/" + school_district);
@@ -28,12 +29,19 @@ export default {
   getAllCities(){
     return apiClient.get('/all/cities-api');
   },
-  getSchoolsbyCity(city_name){
+  getSchoolsByCity(city_name){
     console.log("List of schools in City " + city_name);
+    return apiClient.get('/all/cities-api');
     //return apiClient.get('/schools/city/' + city_name);
   },
-  getSchoolsbyDistrict(did){
+  getSchoolInformation(school_id) {
+    
+    return apiClient.get('/school' + "/" + school_id);
+  },
+  getSchoolsByDistrict(did){
     console.log("List of schools in district " + did);
+    return apiClient.get('/all/school-districts-api');
+  
     //return apiClient.get('/schools/district/' + did);
   }
 }

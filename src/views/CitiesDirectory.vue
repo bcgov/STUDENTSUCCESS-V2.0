@@ -8,15 +8,14 @@
     <option>Manual Option</option>
     <option v-for="city in citiesList" :key="city.phy_city"> {{ city.phy_city }}</option>
   </datalist>
-<div v-if="selectedCitySchoolsList.length">
-  <h2>Schools in {{selectedCity}}</h2>
-  <div class="list-of-schools">
 
-    <b-list-group v-for="item in selectedCitySchoolsList" :key="item">
-        <b-list-group-item>{{item}}</b-list-group-item>
+  <h2>Schools in {{selectedCity}}</h2>
+  <div class="list-of-cities">
+
+    <b-list-group v-for="item in citiesList" :key="item">
+        <b-list-group-item><router-link :to="{ name: 'schoolList', params: { type: 'city', keyword: item.phy_city }}">{{item.phy_city}} ({{item.totalschools}})</router-link></b-list-group-item>
     </b-list-group>    
   </div>
-</div>
    
 
    <router-view></router-view>
@@ -47,13 +46,6 @@ export default {
       })
   },
    methods: {
-    searchForSchools: function (event) {
-      console.log(event);
-      console.log("search for schools by city" + this.selectedCity);
-        this.selectedCitySchoolsList = [this.selectedCity + " school 1", this.selectedCity + " school 2", this.selectedCity + " school3"];
-       StudentSuccessDataService.getSchoolsbyCity(this.selectedCity);
-      
-    }
   }
 }
 </script>
