@@ -13,7 +13,7 @@ export const routes = [
     }},
     { path:'/glossary', name:'glossary', component: Glossary},
     { path:'/cities', component: CitiesDirectory,},
-    { path:'/school/:sid', name: 'school', component: School,},
+    { path:'/school/:mincode', name: 'school', component: School,},
     { path:'/school-districts', component: SchoolDistrictDirectory,},
     { path:'/schools/:type/:keyword', name:'schoolList', component: SchoolList},
     { path:'/school-district/:did', name: 'schoolDistrictByNumber',component: SchoolDistrict, children:[

@@ -31,17 +31,24 @@ export default {
   },
   getSchoolsByCity(city_name){
     console.log("List of schools in City " + city_name);
-    return apiClient.get('/all/cities-api');
+    return apiClient.get('schools-api/in/victoria');
     //return apiClient.get('/schools/city/' + city_name);
   },
-  getSchoolInformation(school_id) {
-    
-    return apiClient.get('/school' + "/" + school_id);
+  getSchoolInformation(mincode) {
+    return apiClient.get('/school-api' + "/" + mincode);
   },
-  getSchoolsByDistrict(did){
+  getSchoolsInDistrict(did){
     console.log("List of schools in district " + did);
-    return apiClient.get('/all/school-districts-api');
+    console.log(apiClient.get('/schools-api/in-school-district/' + did))
+    return apiClient.get('/schools-api/in-school-district/' + did);
   
     //return apiClient.get('/schools/district/' + did);
+  },
+  getAllSchoolsAndDistricts(){
+    return apiClient.get('/api/v1/allSchoolsWithSchoolDistricts.json');
+  },
+  getSchoolsInCity(city){
+    
+    return apiClient.get('/schools-api/in/' + city);
   }
 }

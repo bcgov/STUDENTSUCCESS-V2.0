@@ -11,7 +11,6 @@
         <b-nav-item href="#"> <router-link to="/glossary">Glossary</router-link></b-nav-item>
         <b-nav-item href="#"> <router-link to="/cities">Cities Directory</router-link></b-nav-item>
         <b-nav-item href="#"><router-link to="/school-districts">School District Directory</router-link></b-nav-item>
-        <b-nav-item href="#"><router-link to="/schools/city/district">School List</router-link></b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
