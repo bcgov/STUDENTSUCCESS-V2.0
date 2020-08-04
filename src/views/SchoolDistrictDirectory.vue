@@ -22,7 +22,8 @@ export default {
   created() {
     StudentSuccessDataService.getAllSchoolDistricts()
       .then((response) => {
-        this.schoolDistrictsList = response.data
+        console.log(response.data);
+        this.schoolDistrictsList = response.data.school_districts;
       })
       // eslint-disable-next-line no-unused-vars
       .catch((error) => {

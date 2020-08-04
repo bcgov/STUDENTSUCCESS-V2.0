@@ -5,6 +5,7 @@ import SchoolDistrictDirectory from '../views/SchoolDistrictDirectory.vue'
 import SchoolDistrict from '../views/SchoolDistrict.vue'
 import Glossary from '../views/Glossary.vue'
 import CitiesDirectory from '../views/CitiesDirectory.vue'
+import SchoolList from '../views/SchoolList.vue'
 import School from '../views/School.vue'
 import SchoolDistrictSchoolsDirectory from '../views/SchoolDistrictSchoolsDirectory.vue'
 
@@ -16,8 +17,9 @@ Vue.use(VueRouter)
     }},
     { path:'/cities', name:'citiesDirectory', component: CitiesDirectory},
     { path:'/glossary', name:'glossary', component: Glossary},
+    { path:'/schools/city/district', name:'schoolList', component: SchoolList},
     { path:'/school-district', name:'schoolDistrictDirectory', components: SchoolDistrictDirectory},
-    { path: '/school-district/:did', name: 'schoolDistrictByNumber', component: SchoolDistrict,
+    { path: '/school-district/:did', component: SchoolDistrict,
 
       children: [
       { name:'one', path: '', component: SchoolDistrict },

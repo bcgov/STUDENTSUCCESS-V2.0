@@ -71,14 +71,10 @@
     </ul>
   </div>
 
-  
-  <button v-on:click="displaySchoolsInDistrict">See the schools in the District</button>
-  <div v-if="schoolDistrictSchoolsList.length">
-    <h2> School District {{ this.did }} Schools</h2>
-        <b-list-group v-for="item in schoolDistrictSchoolsList" :key="item">
-        <b-list-group-item>{{item}}</b-list-group-item>
-    </b-list-group>  
-  </div>
+<router-link :to="{ name: 'schoolList', params: { type: 'district', keyword: this.did }}">View Schools in District {{ this.did }} </router-link>
+
+
+
   <router-view></router-view>    
   
 </div>
@@ -112,12 +108,6 @@ export default {
       })
   },
    methods: {
-    displaySchoolsInDistrict: function (event) {
-      console.log(event);
-       StudentSuccessDataService.getSchoolsbyDistrict(this.did);
-       this.schoolDistrictSchoolsList = ["School District " +  this.did + " school 1", "School District " + this.did + " school 2", "School District " + this.did + " school 3", "School District " + this.did + " school 4"];
-      
-    }
   }
 }
 </script>
