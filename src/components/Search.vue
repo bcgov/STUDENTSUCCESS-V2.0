@@ -1,16 +1,16 @@
 <template>
 <div class="cities">
   <h1>Search for School or District</h1>
-  <b-form-input v-model="selectedCity" list="my-list-id"></b-form-input>
+  <b-form-input v-model="selected" list="my-list-id" debounce="500"></b-form-input>
   <button v-on:click="searchForSchools">Search</button>
   
 
   <datalist id="my-list-id">
     <option>Manual Option</option>
-
     <option v-for="item in searchList" :key="item.mincode"> {{ item.s }} </option>
-  </datalist>
 
+  </datalist>
+{{selected.mincode}}
 </div>
 </template>
 <script>
@@ -19,15 +19,27 @@ export default {
   name: 'Search',
   data() {
     return {
-      selectedCity: "",
-      selectedCitySchoolsList: [],
-      searchList: []
+      selected: "",
+      searchList: [],
+      selectedSd: "",
+      selectedMincode: "",
     }
   },
-   methods: {
-     searchForSchools:{
-       
-     }
+  methods: {
+    searchForSchools(){
+      if(this.selected.includes("School District")){
+        console.log("school District Selected");
+        this.selectedSd = this.searchList.find((school) => {
+            return school.s === this.selected;
+        }).sd;
+        this.$router.push({name: 'schoolDistrictByNumber', params:{ did: this.selectedSd}})
+      }else{
+        this.selectedMincode = this.searchList.find((school) => {
+            return school.s === this.selected;
+        }).mincode;
+        this.$router.push({name: 'school', params:{ mincode: this.selectedMincode}})
+      }
+    }
   },
   created() {
     StudentSuccessDataService.getAllSchoolsAndDistricts()
