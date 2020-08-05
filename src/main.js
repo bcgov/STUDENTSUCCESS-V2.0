@@ -4,9 +4,9 @@ import App from './App.vue';
 import { routes } from './routes';
 import store from './store';
 import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
-
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
+import '@bcgov/bootstrap-theme/dist/css/bootstrap-theme.min.css';
+//import 'bootstrap/dist/css/bootstrap.css';
+//import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 Vue.config.productionTip = false
 Vue.use(VueRouter);
