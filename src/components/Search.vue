@@ -1,8 +1,7 @@
 <template>
 <div class="cities">
-  <h1>Search for School or District</h1>
   <b-form-input v-model="selected" list="my-list-id" debounce="500"></b-form-input>
-  <button v-on:click="searchForSchools">Search</button>
+  <button type="button" class="btn btn-primary" v-on:click="searchForSchools">Search</button>
   
 
   <datalist id="my-list-id">

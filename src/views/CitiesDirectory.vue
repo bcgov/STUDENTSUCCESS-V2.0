@@ -1,7 +1,7 @@
 <template>
 <div class="cities">
+  <b-breadcrumb :items="crumbs"></b-breadcrumb>
   <h1>City Directory</h1>
-
   <h2>Search by Cities</h2>
   <div class="list-of-cities">
 
@@ -22,6 +22,16 @@ export default {
   data() {
     return {
       citiesList: [],
+      crumbs: [
+          {
+            text: 'Home',
+            href: '#'
+          },
+          {
+            text: "Cities Directory",
+            active: true
+          }
+      ],
     }
   },
   created() {

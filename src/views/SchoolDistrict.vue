@@ -1,6 +1,7 @@
 <template>
 
 <div class="schooldistrict">
+  <b-breadcrumb :items="crumbs"></b-breadcrumb>
   <b-alert show><div class="message"><strong><div v-html="did"></div></strong></div></b-alert>
   <h1>School District {{ did }} ({{ districtInformation.district_name}})</h1>
 
@@ -87,8 +88,23 @@ export default {
     return {
         did: this.$route.params.did,
         districtInformation: [],
-        schoolDistrictSchoolsList: []
+        schoolDistrictSchoolsList: [],
+        crumbs: [
+          {
+            text: 'Home',
+            href: '#'
+          },
+          {
+            text: 'School District Directory',
+            href: '/school-districts'
+          },
+          {
+            text: "School District " + this.$route.params.did,
+            active: true
+          }
+        ]
     }
+    
   },
   watch: {
       '$route'(to){

@@ -1,5 +1,6 @@
 <template>
   <div class="schoolDistrictDirectory">
+    <b-breadcrumb :items="crumbs"></b-breadcrumb>
     <h1>School district Directory</h1>
       <b-list-group v-for="item in schoolDistrictsList" :key="item.sd">
         <b-list-group-item><router-link :to="{ name: 'schoolDistrictByNumber', params: { did: item.sd }}">{{ item.district_name }} ({{ item.sd }})</router-link></b-list-group-item>
@@ -16,6 +17,16 @@ export default {
   data() {
     return {
         schoolDistrictsList: [],
+        crumbs: [
+          {
+            text: 'Home',
+            href: '#'
+          },
+          {
+            text: "School District Directory",
+            active: true
+          }
+        ]
 
     }
   },
