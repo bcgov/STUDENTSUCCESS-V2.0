@@ -1,9 +1,11 @@
 <template>
   <div class="home">
+    <b-breadcrumb :items="crumbs"></b-breadcrumb>
+    <h1>Search for school</h1>
     <div class="search">
       <Search v-bind:searchList="this.schoolList"></Search>
     </div>
-    <img alt="Vue logo" src="../assets/logo.png">
+ 
   </div>
 
 </template>
@@ -18,6 +20,12 @@ export default {
   },
   data() {
     return {
+      crumbs: [
+          {
+            text: 'Home',
+            active: true
+          }
+        ]
     }
   }
   

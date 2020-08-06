@@ -1,6 +1,7 @@
 <template>
 
 <div class="school">
+  <b-breadcrumb :items="crumbs"></b-breadcrumb>
  <h1> {{schoolInformation.school_name}} </h1>
  {{ schoolInformation.phy_address_line_1 }}
 <h2>Other information</h2>
@@ -49,6 +50,20 @@ export default {
     return {
         mincode: this.$route.params.mincode,
         schoolInformation: [],
+        crumbs: [
+          {
+            text: 'Home',
+            href: '#'
+          },
+          {
+            text: 'School District',
+            href: '#'
+          },
+          {
+            text: this.$route.params.mincode,
+            active: true
+          }
+        ]
     }
   },
   watch: {

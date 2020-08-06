@@ -6,7 +6,6 @@
     <h1 v-if="type=='district'">District {{ keyword }} Schools</h1>
     <h1 v-if="type=='city'">{{ keyword }} School</h1>
     <b-list-group v-for="item in this.schools" :key="item.mincode">
-
         <b-list-group-item><router-link :to="{ name: 'school', params: { mincode: item.mincode }}">{{item.school_name}} {{item.mincode}} <div v-if="item.independent=='0'">Public</div><div v-if="item.independent=='1'">Independent</div></router-link></b-list-group-item>
     </b-list-group>  
 

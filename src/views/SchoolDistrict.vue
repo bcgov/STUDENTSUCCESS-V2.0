@@ -1,10 +1,11 @@
 <template>
 
 <div class="schooldistrict">
+  <b-breadcrumb :items="crumbs"></b-breadcrumb>
   <b-alert show><div class="message"><strong><div v-html="did"></div></strong></div></b-alert>
   <h1>School District {{ did }} ({{ districtInformation.district_name}})</h1>
 
-<img v-bind:src="'https://studentsuccess.gov.bc.ca/img/maps/map_sd_' + districtInformation.sd +'.png'"  alt="Small map graphic with School District 010 highlighted.">
+<img v-bind:src="'https://studentsuccess.gov.bc.ca/img/maps/map_sd_' + this.did +'.png'"  alt="Small map graphic with School District 010 highlighted.">
 <strong>District Office:</strong>   {{ districtInformation.courier_address }}<br>
 <strong>Phone:</strong> {{ districtInformation.district_phone }}<br>
 <strong>Website:</strong> {{  districtInformation.website }}<br>
@@ -87,8 +88,23 @@ export default {
     return {
         did: this.$route.params.did,
         districtInformation: [],
-        schoolDistrictSchoolsList: []
+        schoolDistrictSchoolsList: [],
+        crumbs: [
+          {
+            text: 'Home',
+            href: '#'
+          },
+          {
+            text: 'School District Directory',
+            href: '/school-districts'
+          },
+          {
+            text: "School District " + this.$route.params.did,
+            active: true
+          }
+        ]
     }
+    
   },
   watch: {
       '$route'(to){

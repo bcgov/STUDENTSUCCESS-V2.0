@@ -1,5 +1,6 @@
 <template>
   <div class="glossary">
+    <b-breadcrumb :items="crumbs"></b-breadcrumb>
     <h1>Glossary</h1>
     <h1>#</h1>
     <b-list-group v-for="item in hash" :key="item.gid">
@@ -200,8 +201,43 @@ export default {
   data() {
     return {
       glossaryData: [],
-      hash: [], A: [], B: [], C: [], D: [], E: [], F: [], G: [], H: [], I: [], J: [], K: [], L: [], M: [], N: [], O: [], P: [], Q: [], R: [],
-      S: [], T: [], U: [], V: [], W: [], X: [], Y: [], Z: [],
+      hash: [],
+      A: [],
+      B: [],
+      C: [],
+      D: [],
+      E: [],
+      F: [],
+      G: [],
+      H: [],
+      I: [],
+      J: [],
+      K: [],
+      L: [],
+      M: [],
+      N: [],
+      O: [],
+      P: [],
+      Q: [],
+      R: [],
+      S: [],
+      T: [],
+      U: [],
+      V: [],
+      W: [],
+      X: [],
+      Y: [],
+      Z: [],
+      crumbs: [
+          {
+            text: 'Home',
+            href: '#'
+          },
+          {
+            text: "Glossary",
+            active: true
+          }
+        ]
     };
   },
   created() {
