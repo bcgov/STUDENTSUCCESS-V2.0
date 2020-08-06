@@ -3,14 +3,11 @@
   <b-breadcrumb :items="crumbs"></b-breadcrumb>
   <h1>City Directory</h1>
   <h2>Search by Cities</h2>
-  <div class="list-of-cities">
-
-    <b-list-group v-for="item in citiesList" :key="item">
-        <b-list-group-item><router-link :to="{ name: 'schoolList', params: { type: 'city', keyword: item.phy_city }}">{{item.phy_city}} ({{item.totalschools}})</router-link></b-list-group-item>
-    </b-list-group>    
+  <div class="cities-list">
+      <b-list-group v-for="item in citiesList" :key="item" class="list-striped">
+          <b-list-group-item><router-link :to="{ name: 'schoolList', params: { type: 'city', keyword: item.phy_city }}">{{item.phy_city}} ({{item.totalschools}})</router-link></b-list-group-item>
+      </b-list-group>    
   </div>
-   
-
    <router-view></router-view>
 
 </div>
@@ -50,8 +47,10 @@ export default {
 }
 </script>
 <style scoped>
-  img{
-    width: 300px;
-    float:right;
+  .cities-list .list-striped:nth-child(2n+1) div{
+    background-color: rgba(0,0,0,0.05)
+  }
+  .cities-list  .list-striped:nth-child(2n) div{
+    background-color: white;
   }
 </style>
