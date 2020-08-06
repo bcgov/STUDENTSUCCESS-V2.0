@@ -6,7 +6,7 @@
 
   <datalist id="my-list-id">
     <option>Manual Option</option>
-    <option v-for="item in searchList" :key="item.mincode"> {{ item.s }} </option>
+    <option v-for="item in searchList" :key="item.primary_key"> {{ item.s }} </option>
 
   </datalist>
 {{selected.mincode}}
