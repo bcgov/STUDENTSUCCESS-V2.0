@@ -27,10 +27,10 @@ export default {
   methods: {
     searchForSchools(){
       if(this.selected.includes("School District")){
-        console.log("school District Selected");
         this.selectedSd = this.searchList.find((school) => {
-            return school.s === this.selected;
+            return school.s.replace(/\s+/g,' ').trim() === this.selected.replace(/\s+/g,' ').trim(); // remove database spaces
         }).sd;
+        console.log(this.selectedSd);
         this.$router.push({name: 'schoolDistrictByNumber', params:{ did: this.selectedSd}})
       }else{
         this.selectedMincode = this.searchList.find((school) => {

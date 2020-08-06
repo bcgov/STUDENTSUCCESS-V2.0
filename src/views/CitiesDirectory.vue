@@ -4,7 +4,7 @@
   <h1>City Directory</h1>
   <h2>Search by Cities</h2>
   <div class="cities-list">
-      <b-list-group v-for="item in citiesList" :key="item" class="list-striped">
+      <b-list-group v-for="item in citiesList" :key="item.phy" class="list-striped">
           <b-list-group-item><router-link :to="{ name: 'schoolList', params: { type: 'city', keyword: item.phy_city }}">{{item.phy_city}} ({{item.totalschools}})</router-link></b-list-group-item>
       </b-list-group>    
   </div>
