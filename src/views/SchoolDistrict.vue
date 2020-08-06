@@ -116,7 +116,7 @@ export default {
     StudentSuccessDataService.getSchoolDistrictInformation(this.did)
       .then((response) => {
         this.districtInformation = response.data
-        console.log(this.districtInformation);
+        console.log('District Info' + this.districtInformation);
       })
       // eslint-disable-next-line no-unused-vars
       .catch((error) => {
