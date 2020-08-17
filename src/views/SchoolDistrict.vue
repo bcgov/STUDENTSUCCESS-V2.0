@@ -49,7 +49,7 @@
       <li>
         Intellectual Development
         <ul>
-          <li>Completion Rate</li>
+          <li><completion-rate></completion-rate></li>
           <li>Foundation Skills Assessment</li>
           <li>Grade-to-Grade Transitions</li>
           <li>Provincial Examinations</li>
@@ -82,8 +82,12 @@
 </template>
 <script>
 import StudentSuccessDataService from "@/services/StudentSuccessDataService.js";
+import CompletionRate from "../components/CompletionRate.vue"
 export default {
   name: 'SchoolDistrict',
+  components: {
+    CompletionRate: CompletionRate
+  },
   data() {
     return {
         did: this.$route.params.did,
@@ -116,7 +120,7 @@ export default {
     StudentSuccessDataService.getSchoolDistrictInformation(this.did)
       .then((response) => {
         this.districtInformation = response.data
-        console.log('District Info' + this.districtInformation);
+        console.log('District Info: ' + this.districtInformation);
       })
       // eslint-disable-next-line no-unused-vars
       .catch((error) => {
