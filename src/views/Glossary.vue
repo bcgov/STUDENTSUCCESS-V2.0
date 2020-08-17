@@ -240,7 +240,7 @@ export default {
         ]
     };
   },
-  created() {
+  mounted() {
     axios
       .get("https://test.studentsuccess.gov.bc.ca/glossary-api")
       .then((res) => {
