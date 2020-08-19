@@ -30,10 +30,10 @@ export default {
   },
   //Grabs the data when the component is mounted
   mounted () {
-    StudentSuccessDataService.getCompletionRates()
+    StudentSuccessDataService.getCompletionRates(this.did)
       .then((response) => {
-        this.info = response.data
-        console.log('Completion Rate: ' + this.info.data.completion_rate);
+        this.info = response.data.data.completion_rate;
+        console.log('Completion Rate: ' + this.info);
         //this.info = this.info.data.completion_rate
       })
       // eslint-disable-next-line no-unused-vars
@@ -107,9 +107,10 @@ export default {
         "color": "#666666"
     },
     "data": [
-        //Tobe replaced via API
-        this.info
-        //Tobe replaced via API
+        {
+            "name": "provlvl",
+            "values":this.info
+        }
         ,
         {
             "name": "distminmax",

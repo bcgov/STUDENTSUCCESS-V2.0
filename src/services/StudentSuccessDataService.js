@@ -51,7 +51,9 @@ export default {
     
     return apiClient.get('/schools-api/in/' + city);
   },
-  getCompletionRates(){
-    return apiClient.get('/school-district-api/034/report/completion-rates')
+  getCompletionRates(did){
+    return apiClient.get('/school-district-api/'+did+'/report/completion-rates')
+    //http://localhost:9999/api/v1/completion-rates?sd=005
+    ///school-district-api/034/report/completion-rates
   }
 }

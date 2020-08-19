@@ -17,7 +17,7 @@ export const routes = [
     { path:'/school-districts', component: SchoolDistrictDirectory,},
     { path:'/schools/:type/:keyword', name:'schoolList', component: SchoolList},
     { path:'/school-district/:did', name: 'schoolDistrictByNumber',component: SchoolDistrict, children:[
-        { path: '', component: SchoolDistrictDirectory },
+        //{ path: '', component: SchoolDistrictDirectory },
         { path: 'schools', component: SchoolDistrictSchoolsDirectory },
         { path: 'schools/:sid', component: School },
     ]}
