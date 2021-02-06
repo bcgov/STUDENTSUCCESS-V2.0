@@ -5,7 +5,7 @@ import { routes } from './routes';
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css';
 import store from './store';
-import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
+import { BootstrapVue } from 'bootstrap-vue'
 import '@bcgov/bootstrap-theme/dist/css/bootstrap-theme.min.css';
 //import 'bootstrap/dist/css/bootstrap.css';
 //import 'bootstrap-vue/dist/bootstrap-vue.css';

@@ -36,37 +36,38 @@
   {{  districtInformation.website }}
 
 
+
   <hr>
   <div class="charts">
     <h2>Available Reports</h2>
     <ul>
       <li>
-        Contextual Information
+        <h2>Contextual Information</h2>
         <ul>
-          <li>Demographic Information</li>
+          <li><router-link :to="{ name: 'District Report', params: { report: 'contextual-information' }}">Contextual Information</router-link></li>
         </ul>
       </li>
       <li>
-        Intellectual Development
+        <h2>Intellectual Development</h2>
         <ul>
-          <li><completion-rate></completion-rate></li>
-          <li>Foundation Skills Assessment</li>
-          <li>Grade-to-Grade Transitions</li>
-          <li>Provincial Examinations</li>
+          <li><router-link :to="{ name: 'District Report', params: { report: 'completion-rates' }}">Completion Rates</router-link></li>
+          <li><router-link :to="{ name: 'District Report', params: { report: 'foundation-skills-assessment' }}">Foundation Skills Assessments</router-link></li>
+          <li><router-link :to="{ name: 'District Report', params: { report: 'grade-to-grade-transitions' }}">Grade-to-Grade Transitions</router-link></li>
+          <li><router-link :to="{ name: 'District Report', params: { report: 'provincial-examinations' }}">Provincial Examinations</router-link></li>
         </ul>
       </li>   
       <li>
-       Human and Social Development
+       <h2>Human and Social Development</h2>
         <ul>
-          <li>Characteristics of Students Entering School</li>
-          <li>Student Satisfaction</li>
+          <li><router-link :to="{ name: 'District Report', params: { report: 'characteristics-of-students-entering-school' }}">Characteristics of Students Entering School</router-link></li>
+          <li><router-link :to="{ name: 'District Report', params: { report: 'student-satisfaction' }}">Student Satisfaction</router-link></li>
         </ul>
       </li>
       <li>
-        Career Development
+        <h2>Career Development</h2>
         <ul>
-          <li>Post-Secondary and Career Preparation</li>
-           <li>Transition to BC Post-Secondary</li>
+          <li><router-link :to="{ name: 'District Report', params: { report: 'post-secondary-and-career-preparation' }}">Post-Secondary and Career Preparation</router-link></li>
+          <li><router-link :to="{ name: 'District Report', params: { report: 'transition-to-bc-post-secondary' }}">Transition to BC Post-Secondary</router-link></li>
         </ul>
       </li>            
     </ul>
@@ -82,11 +83,10 @@
 </template>
 <script>
 import StudentSuccessDataService from "@/services/StudentSuccessDataService.js";
-import CompletionRate from "../components/CompletionRate.vue"
 export default {
   name: 'SchoolDistrict',
   components: {
-    CompletionRate: CompletionRate
+
   },
   data() {
     return {
