@@ -76,11 +76,13 @@ export default {
     StudentSuccessDataService.getSchoolInformation(this.mincode)
       .then((response) => {
         this.schoolInformation = response.data.school;
+        // eslint-disable-next-line no-unused-vars
         console.log(this.schoolInformation);
       })
-      // eslint-disable-next-line no-unused-vars
+      
       .catch((error) => {
-        //console.log('There was an error:', error.response)
+        // eslint-disable-next-line no-unused-vars
+        console.log('There was an error:', error.response)
       })
   },
 

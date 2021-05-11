@@ -5,7 +5,7 @@
     <div class="search">
       <Search v-bind:searchList="this.schoolList"></Search>
     </div>
- 
+    
   </div>
 
 </template>

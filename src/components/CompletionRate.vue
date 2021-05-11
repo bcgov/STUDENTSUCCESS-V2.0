@@ -1,8 +1,8 @@
 <template>
   
-  <div class="dashboard">
+  <div>
     <div id="completion-rate">
-    
+      
       <h3>Completion Rates</h3>
       <div class="hor">
         <iframe scrolling="no"  width="100%" height="200px" id="frameId-91" class="tableau-embed" v-bind:src="'//public.tableau.com/views/ESDR2/5_CompRate?:showVizHome=no&amp;:display_share=no&amp;:embed=true&amp;:toolbar=no&amp;:device=desktop&amp;SD=' + did"></iframe>   

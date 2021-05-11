@@ -9,7 +9,7 @@
     </div>
     
     <div v-if="report=='foundation-skills-assessment'">
-      <CompletionRate></CompletionRate>
+      <FoundationSkillsAssessment></FoundationSkillsAssessment>
     </div>
     <div v-if="report=='grade-to-grade-transitions'">
       <CompletionRate></CompletionRate>
@@ -35,13 +35,14 @@
 import StudentSuccessDataService from "@/services/StudentSuccessDataService.js";
 import CompletionRate from "@/components/CompletionRate.vue"
 import ContextualInformation from "@/components/ContextualInformation.vue"
-
+import FoundationSkillsAssessment from "@/components/FoundationSkillsAssessment.vue"
 
 export default {
   name: 'SchoolDistrict',
   components: {
     CompletionRate: CompletionRate,
-    ContextualInformation: ContextualInformation
+    ContextualInformation: ContextualInformation,
+    FoundationSkillsAssessment:FoundationSkillsAssessment
   },
   data() {
     return {
