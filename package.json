@@ -14,7 +14,7 @@
     "core-js": "^3.6.5",
     "json-server": "^0.16.1",
     "nprogress": "^0.2.0",
-    "vega": "^5.13.0",
+    "vega": "^5.22.1",
     "vega-embed": "^6.2.1",
     "vega-lite": "^4.0.2",
     "vue": "^2.6.11",
